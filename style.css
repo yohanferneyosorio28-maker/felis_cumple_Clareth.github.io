@@ -7,6 +7,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
 }
 
 .container{
@@ -14,6 +15,7 @@ body{
     max-width:700px;
     padding:30px;
     z-index:10;
+    position:relative;
 }
 
 #sobre{
@@ -48,20 +50,32 @@ button{
 
 button:hover{
     background:#c2185b;
+    transform:scale(1.05);
 }
 
 .oculto{
     display:none;
 }
 
+/* CARTA */
+
 #carta{
+    display:none;
     margin-top:30px;
     background:white;
     padding:30px;
     border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    box-shadow:0 5px 25px rgba(0,0,0,0.15);
     text-align:left;
-    animation:aparecer 1s ease;
+
+    opacity:0;
+    transform:scale(0.8);
+    transition:all 1s ease;
+}
+
+#carta.mostrar{
+    opacity:1;
+    transform:scale(1);
 }
 
 .firma{
@@ -71,19 +85,7 @@ button:hover{
     margin-top:20px;
 }
 
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* FLORES */
+/* LLUVIA DE FLORES */
 
 #flores{
     position:fixed;
@@ -93,36 +95,25 @@ button:hover{
     height:100%;
     overflow:hidden;
     pointer-events:none;
+    z-index:1;
 }
 
 .flor{
     position:absolute;
-    top:-50px;
     font-size:28px;
-    animation:caer linear forwards;
+    animation:caer 6s linear forwards;
 }
 
 @keyframes caer{
 
     0%{
-        transform:translateY(-50px) rotate(0deg);
         opacity:1;
+        transform:translateY(-50px) rotate(0deg);
     }
 
     100%{
-        transform:translateY(110vh) rotate(360deg);
         opacity:0;
+        transform:translateY(110vh) rotate(360deg);
     }
 
-}
-
-#carta{
-    opacity:0;
-    transform:scale(0.8);
-    transition:1s;
-}
-
-#carta.mostrar{
-    opacity:1;
-    transform:scale(1);
 }
