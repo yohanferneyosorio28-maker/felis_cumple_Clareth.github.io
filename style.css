@@ -1,3 +1,7 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
 body{
     margin:0;
     padding:0;
@@ -12,14 +16,18 @@ body{
 
 .container{
     text-align:center;
-    max-width:700px;
+    max-width:800px;
     padding:30px;
-    z-index:10;
     position:relative;
+    z-index:10;
 }
 
+/* =========================
+   SOBRE
+========================= */
+
 #sobre{
-    font-size:90px;
+    font-size:100px;
     margin-bottom:20px;
     transition:0.5s;
 }
@@ -28,24 +36,35 @@ body{
     transform:scale(1.1);
 }
 
+/* =========================
+   TITULOS
+========================= */
+
 h1{
     color:#c2185b;
+    margin-bottom:10px;
 }
 
 .subtitulo{
     color:#666;
+    font-size:18px;
     margin-bottom:25px;
 }
+
+/* =========================
+   BOTON
+========================= */
 
 button{
     background:#e91e63;
     color:white;
     border:none;
-    padding:15px 30px;
+    padding:15px 35px;
     border-radius:30px;
     font-size:18px;
     cursor:pointer;
     transition:0.3s;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
 button:hover{
@@ -53,23 +72,37 @@ button:hover{
     transform:scale(1.05);
 }
 
+/* =========================
+   CARTA
+========================= */
+
 .oculto{
     display:none;
 }
 
-/* CARTA */
-
 #carta{
     display:none;
+
     margin-top:30px;
-    background:white;
-    padding:30px;
+
+    background:#fffdf8;
+
+    padding:35px;
+
     border-radius:20px;
-    box-shadow:0 5px 25px rgba(0,0,0,0.15);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
     text-align:left;
 
+    max-height:70vh;
+
+    overflow-y:auto;
+
     opacity:0;
+
     transform:scale(0.8);
+
     transition:all 1s ease;
 }
 
@@ -78,14 +111,36 @@ button:hover{
     transform:scale(1);
 }
 
-.firma{
-    text-align:right;
+#carta h2{
+    text-align:center;
     color:#c2185b;
-    font-weight:bold;
-    margin-top:20px;
+    margin-bottom:10px;
 }
 
-/* LLUVIA DE FLORES */
+#carta h3{
+    text-align:center;
+    color:#777;
+    font-weight:normal;
+    font-style:italic;
+    margin-bottom:25px;
+}
+
+#carta p{
+    color:#444;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.firma{
+    text-align:right;
+    margin-top:30px;
+    color:#c2185b;
+    font-weight:bold;
+}
+
+/* =========================
+   FLORES
+========================= */
 
 #flores{
     position:fixed;
@@ -104,16 +159,48 @@ button:hover{
     animation:caer 6s linear forwards;
 }
 
+/* =========================
+   ANIMACIONES
+========================= */
+
 @keyframes caer{
 
     0%{
         opacity:1;
-        transform:translateY(-50px) rotate(0deg);
+        transform:
+            translateY(-50px)
+            rotate(0deg);
     }
 
     100%{
         opacity:0;
-        transform:translateY(110vh) rotate(360deg);
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    .container{
+        padding:20px;
+    }
+
+    #sobre{
+        font-size:80px;
+    }
+
+    #carta{
+        padding:25px;
+    }
+
+    #carta p{
+        font-size:16px;
     }
 
 }
