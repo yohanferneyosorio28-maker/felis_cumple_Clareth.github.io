@@ -1,8 +1,38 @@
 function abrirCarta(){
 
-    document.getElementById("carta").style.display = "block";
-
     document.getElementById("sobre").innerHTML = "💌";
+
+    for(let i = 0; i < 250; i++){
+
+        const flor = document.createElement("div");
+
+        flor.classList.add("flor");
+
+        flor.innerHTML = "🌸";
+
+        flor.style.left =
+            Math.random() * window.innerWidth + "px";
+
+        flor.style.top =
+            Math.random() * window.innerHeight + "px";
+
+        flor.style.animationDuration = "3s";
+
+        document.getElementById("flores")
+            .appendChild(flor);
+
+        setTimeout(() => {
+            flor.remove();
+        },3000);
+
+    }
+
+    setTimeout(() => {
+
+        document.getElementById("carta")
+            .style.display = "block";
+
+    },2500);
 
 }
 
