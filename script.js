@@ -27,14 +27,18 @@ function abrirCarta(){
 
     }
 
+setTimeout(() => {
+
+    const carta =
+        document.getElementById("carta");
+
+    carta.style.display = "block";
+
     setTimeout(() => {
+        carta.classList.add("mostrar");
+    },100);
 
-        document.getElementById("carta")
-            .style.display = "block";
-
-    },2500);
-
-}
+},2500);
 
 function crearFlor(){
 
