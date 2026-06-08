@@ -1,8 +1,8 @@
-function abrirCarta(){
+function abrirCarta() {
 
     document.getElementById("sobre").innerHTML = "💌";
 
-    for(let i = 0; i < 250; i++){
+    for (let i = 0; i < 250; i++) {
 
         const flor = document.createElement("div");
 
@@ -10,60 +10,45 @@ function abrirCarta(){
 
         flor.innerHTML = "🌸";
 
-        flor.style.left =
-            Math.random() * window.innerWidth + "px";
+        flor.style.left = Math.random() * window.innerWidth + "px";
+        flor.style.top = Math.random() * window.innerHeight + "px";
 
-        flor.style.top =
-            Math.random() * window.innerHeight + "px";
-
-        flor.style.animationDuration = "3s";
-
-        document.getElementById("flores")
-            .appendChild(flor);
+        document.getElementById("flores").appendChild(flor);
 
         setTimeout(() => {
             flor.remove();
-        },3000);
-
+        }, 2500);
     }
 
-setTimeout(() => {
-
-    const carta =
-        document.getElementById("carta");
-
-    carta.style.display = "block";
-
     setTimeout(() => {
+
+        const carta = document.getElementById("carta");
+
+        carta.style.display = "block";
+
         carta.classList.add("mostrar");
-    },100);
 
-},2500);
+    }, 2000);
+}
 
-function crearFlor(){
+function crearFlor() {
 
     const flor = document.createElement("div");
 
     flor.classList.add("flor");
 
-    const flores = ["🌸","🌺","🌷"];
+    flor.innerHTML = "🌸";
 
-    flor.innerHTML =
-        flores[Math.floor(Math.random()*flores.length)];
-
-    flor.style.left =
-        Math.random()*window.innerWidth + "px";
+    flor.style.left = Math.random() * window.innerWidth + "px";
 
     flor.style.animationDuration =
-        (5 + Math.random()*5) + "s";
+        (5 + Math.random() * 5) + "s";
 
-    document.getElementById("flores")
-        .appendChild(flor);
+    document.getElementById("flores").appendChild(flor);
 
     setTimeout(() => {
         flor.remove();
-    },10000);
-
+    }, 10000);
 }
 
-setInterval(crearFlor,400);
+setInterval(crearFlor, 500);
